@@ -9,8 +9,9 @@ int main() {
         printf("\n===== REGISTRO DE JOGADORES =====\n");
         printf("1 - Adicionar um jogador\n");
         printf("2 - Mostrar jogadores cadastrados\n");
-        printf("3 - Remover um jogador\n");
-        printf("4 - Alterar informações de um jogador\n");
+        printf("3 - Buscar um jogador\n");
+        printf("4 - Remover um jogador\n");
+        printf("5 - Alterar informações de um jogador\n");
         printf("0 - Sair\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
@@ -32,8 +33,12 @@ int main() {
                 
                 break;
 
+            case 5:
+
+                break;
+
             case 0:
-                printf("Encerrando...\n");
+                printf("Encerrando o sistema...\n");
                 break;
 
             default:
