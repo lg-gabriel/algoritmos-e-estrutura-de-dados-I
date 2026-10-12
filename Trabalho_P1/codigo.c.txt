@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[100];
+    int quantidade = 0;
+    int opcao;
+
+    do {
+        printf("\n===== REGISTRO DE JOGADORES =====\n");
+        printf("1 - Adicionar um jogador\n");
+        printf("2 - Mostrar jogadores cadastrados\n");
+        printf("3 - Buscar um jogador\n");
+        printf("4 - Remover um jogador\n");
+        printf("5 - Alterar informações de um jogador\n");
+        printf("0 - Sair\n");
+        printf("Escolha: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                
+                break;
+
+            case 2:
+                 if (quantidade == 0) {
+        printf("Nenhum jogador cadastrado!\n");
+    } else {
+        for (int i = 0; i < quantidade; i++) {
+            printf("Jogador %d: %d\n", i + 1, vetor[i]);
+        }
+    }
+                break;
+
+            case 3:
+                
+                break;
+
+            case 4:
+                
+                break;
+
+            case 5:
+
+                break;
+
+            case 0:
+                printf("Encerrando o sistema...\n");
+                break;
+
+            default:
+                printf("Opção inválida!\n");
+        }
+
+    } while (opcao != 0);
+
+    return 0;
+}
