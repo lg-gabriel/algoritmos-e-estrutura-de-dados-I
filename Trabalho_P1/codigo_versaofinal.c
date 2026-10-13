@@ -102,7 +102,7 @@ int main() {
                     }
 
                     if (posicao == -1) {
-                        printf("Não existe um jogador com essa camisa cadastrado!");
+                        printf("Jogador nao encontrado!");
                     } else {
                         for (int i = posicao; i < quantidade - 1; i++) {
                             idade[i] = idade[i+1];
@@ -122,23 +122,42 @@ int main() {
                     printf("Nenhum jogador cadastrado!\n");
                 } else {
                     int numero;
+                    int encontrado = 0;
 
-                    printf("Digite o numero do jogador que deseja alterar (1 a %d): ", quantidade);
+                    printf("\nNumeros de camisas cadastradas:\n");
+
+                    for (int i = 0; i < quantidade; i++) {
+                        printf("%d\n", camisa[i]);
+                    }
+
+                    printf("\nDigite o numero da camisa do jogador que deseja alterar: ");
                     scanf("%d", &numero);
 
-                    if (numero >= 1 && numero <= quantidade) {
-                        printf("Digite a nova idade: ");
-                        scanf("%d", &idade[numero - 1]);
+                    for (int i = 0; i < quantidade; i++) {
+                        if (camisa[i] == numero) {
+                            printf("\nJogador encontrado!\n");
+                            printf("Idade atual: %d\n", idade[i]);
+                            printf("Quantidade de gols atual: %d\n", gols[i]);
+                            printf("Numero da camisa atual: %d\n", camisa[i]);
 
-                        printf("Digite a nova quantidade de gols: ");
-                        scanf("%d", &gols[numero - 1]);
+                            printf("\nDigite a nova idade: ");
+                            scanf("%d", &idade[i]);
 
-                        printf("Digite o novo numero da camisa: ");
-                        scanf("%d", &camisa[numero - 1]);
+                            printf("Digite a nova quantidade de gols: ");
+                            scanf("%d", &gols[i]);
 
-                        printf("Informacoes alteradas com sucesso!\n");
-                    } else {
-                        printf("Numero de jogador invalido!\n");
+                            printf("Digite o novo numero da camisa: ");
+                            scanf("%d", &camisa[i]);
+
+                            printf("Informacoes alteradas com sucesso!\n");
+
+                            encontrado = 1;
+                            break;
+                        }
+                    }
+
+                    if (encontrado == 0) {
+                        printf("Jogador nao encontrado!\n");
                     }
                 }
                 break;
