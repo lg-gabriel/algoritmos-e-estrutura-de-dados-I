@@ -56,36 +56,65 @@ int main() {
                 break;
 
             case 3:
- if (quantidade == 0) {
-        printf("Nenhum jogador cadastrado!\n");
-    } else {
-        int numero;
-        int encontrado = 0;
+                if (quantidade == 0) {
+                    printf("Nenhum jogador cadastrado!\n");
+                } else {
+                    int numero;
+                    int encontrado = 0;
 
-        printf("Digite o numero da camisa do jogador: ");
-        scanf("%d", &numero);
+                    printf("Digite o numero da camisa do jogador: ");
+                    scanf("%d", &numero);
 
-        for (int i = 0; i < quantidade; i++) {
-            if (camisa[i] == numero) {
-        printf("\n-------------------------------------\n");
+                    for (int i = 0; i < quantidade; i++) {
+                        if (camisa[i] == numero) {
+                        printf("\n-------------------------------------\n");
                 
-                printf("\nJogador encontrado!\n");
-                printf("Idade: %d\n", idade[i]);
-                printf("Quantidade de gols: %d\n", gols[i]);
-                printf("Numero da camisa: %d\n", camisa[i]);
+                        printf("\nJogador encontrado!\n");
+                        printf("Idade: %d\n", idade[i]);
+                        printf("Quantidade de gols: %d\n", gols[i]);
+                        printf("Numero da camisa: %d\n", camisa[i]);
 
-                encontrado = 1;
-            }
-        }
+                        encontrado = 1;
+                        }
+                    }
 
-        if (encontrado == 0) {
-            printf("Jogador nao encontrado!\n");
-        }
-    }
-    break;
+                if (encontrado == 0) {
+                    printf("Jogador nao encontrado!\n");
+                    }
+                }
+                break;
 
             case 4:
+                if (quantidade == 0) {
+                    printf("Nenhum jogador cadastrado!\n");
+                } else {
+                    int posicao = -1;
+                    int desejado;
 
+                    printf("Digite o numero da camisa do jogador que deseja remover: \n");
+                    scanf("%d", &desejado);
+                    
+                    for (int i = 0; i < quantidade; i++) {
+                        if (camisa[i] == desejado) {
+                            posicao = i;
+                            break;
+                        }
+                    }
+
+                    if (posicao == -1) {
+                        printf("Não existe um jogador com essa camisa cadastrado!");
+                    } else {
+                        for (int i = posicao; i < quantidade - 1; i++) {
+                            idade[i] = idade[i+1];
+                            gols[i] = gols[i+1];
+                            camisa[i] = camisa[i+1];
+                        }
+                
+                    quantidade--;
+
+                    printf("Jogador removido com sucesso!\n");
+                    }
+                }
                 break;
 
             case 5:
