@@ -1,77 +1,98 @@
-# Sistema de Registro de Jogadores
+# Registro de Jogadores em C
 
-## Descrição
+## Sobre o projeto
 
-Este projeto é um sistema simples de cadastro e gerenciamento de jogadores, desenvolvido em linguagem C. O programa funciona por meio de um menu interativo no terminal e permite cadastrar, listar, buscar, remover e alterar informações dos jogadores.
+Este projeto consiste em um sistema de registro de jogadores de futebol desenvolvido na linguagem C. O programa permite cadastrar, visualizar, buscar, remover e alterar informações dos jogadores por meio de um menu interativo no terminal.
+
+O sistema utiliza vetores para armazenar os dados dos jogadores, praticando conceitos fundamentais de programação, como estruturas de repetição, estruturas condicionais, comandos de seleção e manipulação de vetores.
 
 ## Funcionalidades
 
-O sistema oferece as seguintes opções:
+O sistema possui as seguintes funcionalidades:
 
-1. **Adicionar um jogador:** registra a idade, a quantidade de gols e o número da camisa.
+1. **Adicionar um jogador:** cadastra um jogador informando o número da camisa, a idade e a quantidade de gols. O sistema impede o cadastro de jogadores com números de camisa duplicados.
 2. **Mostrar jogadores cadastrados:** exibe as informações de todos os jogadores registrados.
-3. **Buscar um jogador:** procura jogadores pelo número da camisa.
-4. **Remover um jogador:** exclui um jogador a partir do número da camisa e reorganiza os dados restantes nos vetores.
-5. **Alterar informações de um jogador:** permite atualizar a idade, a quantidade de gols e o número da camisa.
-0. **Sair:** encerra o programa.
+3. **Buscar um jogador:** localiza um jogador por meio do número da camisa.
+4. **Remover um jogador:** exclui um jogador do registro a partir do número da camisa informado.
+5. **Alterar informações de um jogador:** permite atualizar o número da camisa, a idade e a quantidade de gols de um jogador cadastrado.
+6. **Sair:** encerra a execução do programa.
 
-## Tecnologias e conceitos utilizados
+## Tecnologias utilizadas
 
-- Linguagem C.
-- Biblioteca padrão `stdio.h` para entrada e saída de dados.
-- Vetores para armazenar as informações dos jogadores.
-- Estruturas condicionais (`if`, `else` e `switch`).
-- Laços de repetição (`do while` e `for`).
-- Busca sequencial para localizar jogadores.
-- Deslocamento de elementos nos vetores para remover um cadastro.
+- Linguagem de programação C.
+- Biblioteca padrão `stdio.h`.
+- Compilador de C, como GCC.
+- Terminal para interação com o usuário.
 
-## Como os dados são armazenados
+## Conceitos de programação aplicados
 
-O programa utiliza três vetores de inteiros, cada um com capacidade para 100 posições:
+- Vetores para armazenamento de dados.
+- Estruturas condicionais (`if`, `else`).
+- Estrutura de repetição `do-while`.
+- Laços de repetição `for`.
+- Estrutura de seleção `switch-case`.
+- Busca sequencial em vetores.
+- Remoção de elementos por deslocamento.
+- Atualização de dados armazenados.
+- Controle da quantidade de jogadores cadastrados.
 
-- `idade[100]`: armazena a idade de cada jogador.
-- `gols[100]`: armazena a quantidade de gols de cada jogador.
-- `camisa[100]`: armazena o número da camisa de cada jogador.
+## Estrutura dos dados
 
-As informações de um mesmo jogador ficam na mesma posição dos três vetores. Por exemplo, os dados em `idade[0]`, `gols[0]` e `camisa[0]` correspondem ao primeiro jogador cadastrado.
+O programa utiliza três vetores de inteiros, cada um com capacidade para armazenar até 100 valores:
 
-A variável `quantidade` registra quantos jogadores estão cadastrados no momento.
+| Vetor | Informação armazenada |
+|---|---|
+| `idade` | Idade dos jogadores |
+| `gols` | Quantidade de gols dos jogadores |
+| `camisa` | Número da camisa dos jogadores |
 
-**Observação:** os dados são armazenados apenas durante a execução do programa. Ao encerrar o sistema, os cadastros não são salvos em um arquivo.
+Os dados de um mesmo jogador ficam armazenados na mesma posição dos três vetores. A variável `quantidade` controla o número de jogadores cadastrados.
 
-## Como compilar e executar
+O número da camisa funciona como identificador para as operações de busca, remoção e alteração.
 
-É necessário ter um compilador C, como o GCC, instalado no computador.
+## Como executar
 
-1. Salve o código em um arquivo chamado `registro_jogadores.c`.
-2. Abra o terminal na pasta onde o arquivo foi salvo.
-3. Compile o programa com o comando:
+### 1. Pré-requisitos
 
-   ```bash
-   gcc registro_jogadores.c -o registro_jogadores
-   ```
+É necessário ter um compilador de C instalado, como o GCC.
 
-4. Execute o programa:
+### 2. Compilar o programa
 
-   - **Windows:**
-     ```bash
-     registro_jogadores.exe
-     ```
-   - **Linux:**
-     ```bash
-     ./registro_jogadores
-     ```
+No terminal, acesse a pasta onde está salvo o arquivo do código-fonte e execute:
 
-## Limitações atuais
+```bash
+gcc jogadores.c -o jogadores
+```
+
+Neste exemplo, o arquivo de código-fonte se chama `jogadores.c`.
+
+### 3. Executar o programa
+
+No Windows:
+
+```bash
+jogadores.exe
+```
+
+No Linux:
+
+```bash
+./jogadores
+```
+
+Após a execução, o menu será exibido no terminal. Digite o número correspondente à operação desejada.
+
+## Limitações
 
 - O sistema permite cadastrar até 100 jogadores.
-- O programa não salva os dados após ser encerrado.
-- A entrada de dados espera valores inteiros.
-- O código não valida se já existe outro jogador com o mesmo número de camisa.
+- Os dados são armazenados em vetores durante a execução do programa.
+- Os dados não são salvos em arquivos ou bancos de dados; portanto, são perdidos quando o programa é encerrado.
+- O programa utiliza números inteiros para representar as informações cadastradas.
 
-## Objetivo do projeto
+## Objetivo acadêmico
 
-Praticar conceitos fundamentais de programação em C, especialmente o uso de vetores, estruturas condicionais, laços de repetição, busca, remoção e atualização de dados.
+O projeto tem como objetivo praticar os fundamentos da linguagem C e desenvolver a lógica de programação por meio da implementação de operações de cadastro, consulta, atualização e remoção de dados (CRUD).
 
 ---
-Projeto desenvolvido para fins educacionais na disciplina de **Algoritmo e Estrutura de Dados 1**.
+
+**Projeto desenvolvido para a disciplina Algoritmo e Estrutura de Dados 1.**
