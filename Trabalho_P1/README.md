@@ -95,4 +95,4 @@ O projeto tem como objetivo praticar os fundamentos da linguagem C e desenvolver
 
 ---
 
-**Projeto desenvolvido para a disciplina Algoritmo e Estrutura de Dados 1.**
+**Projeto desenvolvido para a disciplina Algoritmo e Estrutura de Dados 1 referente à nota da P1. Desenvolvido por Lucas Gabriel (branch: main), Ryan Charles (branch: ryan) e Thiago de Jesus (branch: Thiago).**
